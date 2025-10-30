@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["picsl_vtk_affine_demo"]
+
+[project]
+name = "picsl-vtk-affine-demo"
+authors = [
+  { name="Paul Yushkevich", email="pyushkevich@gmail.com" },
+]
+description = "UPenn BE5370 Affine Transformations Teaching Tool"
+version = "0.0.1"
+dependencies = [
+    "vtk",
+    "trame",
+    "trame-vuetify",
+    "trame-vtk",
+    "trame-components",
+    "numpy",
+    "scipy"
+]
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 4 - Beta",
+    "Topic :: Scientific/Engineering :: Medical Science Apps."
+]
+
