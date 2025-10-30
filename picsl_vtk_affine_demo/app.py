@@ -185,7 +185,7 @@ renderer.ResetCamera()
 # I want to set the camera so it is located somewhere along the (1,1,2) direction
 # and pointing at the center of the scene, and so that the scene is properly framed.
 camera = renderer.GetActiveCamera()
-camera.SetPosition(0, 0, 1)
+camera.SetPosition(0.1, -1, -0.5)
 camera.SetFocalPoint(0, 0, 0)
 renderer.ResetCamera()
 
