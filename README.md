@@ -23,7 +23,7 @@ python3 -m pip install picsl_vtk_affine_demo
 
 ## Run
 ```bash
-python3 app.py
+python3 -m picsl_vtk_affine_demo
 ```
 Open the URL printed in the terminal (e.g., http://localhost:8080).
 

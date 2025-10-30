@@ -81,11 +81,14 @@ renderWindowInteractor.GetInteractorStyle().SetCurrentStyleToTrackballCamera()
 
 
 # Read Data
-with resources.as_file(resources.files("picsl_vtk_affine_demo.meshes").joinpath("disk_out_ref.vtu")) as path:
-    print(f'Reading mesh from: {path}')
-    reader = vtkXMLUnstructuredGridReader()
-    reader.SetFileName(path)
-    reader.Update()
+mesh_filename = resources.files("picsl_vtk_affine_demo.meshes").joinpath("disk_out_ref.vtu")
+
+print(f'Reading mesh from: {mesh_filename}')
+reader = vtkXMLUnstructuredGridReader()
+reader.SetFileName(mesh_filename)
+reader.Update()
+print('Mesh read successfully.')
+print(f'Number of points: {reader.GetOutput().GetNumberOfPoints()}')
 
 # Extract Array/Field information
 dataset_arrays = []
