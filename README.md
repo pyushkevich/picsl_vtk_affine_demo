@@ -18,7 +18,7 @@ Interactive VTK app (via Trame) to explore affine transformations on a mesh. Use
 
 Install:
 ```bash
-python3 -m pip install picsl-vtk-affine-demo
+python3 -m pip install picsl_vtk_affine_demo
 ```
 
 ## Run

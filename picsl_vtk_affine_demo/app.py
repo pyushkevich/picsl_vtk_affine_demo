@@ -31,6 +31,8 @@ from vtkmodules.vtkRenderingCore import (
     vtkPolyDataMapper
 )
 
+from importlib import resources
+
 # Required for interactor initialization
 from vtkmodules.vtkInteractionStyle import vtkInteractorStyleSwitch  # noqa
 
@@ -79,9 +81,11 @@ renderWindowInteractor.GetInteractorStyle().SetCurrentStyleToTrackballCamera()
 
 
 # Read Data
-reader = vtkXMLUnstructuredGridReader()
-reader.SetFileName(os.path.join(CURRENT_DIRECTORY, "disk_out_ref.vtu"))
-reader.Update()
+with resources.as_file(resources.files("picsl_vtk_affine_demo.meshes").joinpath("disk_out_ref.vtu")) as path:
+    print(f'Reading mesh from: {path}')
+    reader = vtkXMLUnstructuredGridReader()
+    reader.SetFileName(path)
+    reader.Update()
 
 # Extract Array/Field information
 dataset_arrays = []
